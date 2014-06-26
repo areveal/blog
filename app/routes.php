@@ -14,19 +14,6 @@ Route::get('/', function(){
 	return View::make('hello');
 });
 
-
-Route::get('/sayhello/{name}', function($name)
-{
-    if (strtolower($name) == "cole")
-    {
-        return Redirect::to('http://www.espn.com');
-    }
-    else
-    {
-        return "Hello, $name!";
-    }
-});
-
 Route::get('/resume', function(){
 	return "This will eventually be my resume";
 });
