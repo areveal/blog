@@ -10,37 +10,36 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/', function(){
-	return View::make('hello');
-});
 
-Route::get('/resume', function(){
-	return "This will eventually be my resume";
-});
+//route for home page
+Route::get('', 'HomeController@showHome');
 
-Route::get('/portfolio', function(){
-	return "This will eventually be my portfolio";
-});
+//route for resume
+Route::get('resume', 'HomeController@showResume');
 
-Route::get('/sayhello/{name}', function($name)
-{
-    if (strtolower($name) == "cole")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-    	$data = ['name' => ucfirst($name)];
-        return View::make('temp.my-first-view')->with($data);
-    }
-});
+//route for portfolio
+Route::get('portfolio', 'HomeController@showPortfolio');
 
-Route::get('/rolldice', function(){
+//route for whack-a-mole
+Route::get('whack', 'HomeController@showWhack');
+
+//route for contacts
+Route::get('contact', 'HomeController@showContact');
+
+//route for contact addresses
+Route::get('contact-addresses', 'HomeController@showContactAddresses');
+
+
+Route::get('hello', 'HomeController@showWelcome');
+
+Route::get('sayhello/{name}', 'HomeController@sayHello');
+
+Route::get('rolldice', function(){
 	$roll = mt_rand(1,6);
 	return View::make('temp.rolldice')->with('roll',$roll);
 });
 
-Route::get('/rolldice/{guess}', function($guess){
+Route::get('rolldice/{guess}', function($guess){
 	$roll = mt_rand(1,6);
 	$data = ['roll'=>$roll,
 			 'guess'=>$guess];

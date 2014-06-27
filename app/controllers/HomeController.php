@@ -15,9 +15,44 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	//show blog home page
+	public function showHome()
+	{
+		return View::make('home');
+	}
+	//show blog resume
+	public function showResume()
+	{
+		return View::make('temp.resume');
+	}
+	//show portfolio
+	public function showPortfolio()
+	{
+		return View::make('temp.portfolio');
+	}	
+	//show whack-a-mole project
+	public function showWhack()
+	{
+		return View::make('temp.whack');
+	}
+	//show contact book
+	public function showContact()
+	{
+		return View::make('temp.contact');
+	}
+	//show adddress book
+	public function showContactAddresses()
+	{
+		return View::make('temp.contact-addresses');
+	}	
+
 	public function showWelcome()
 	{
 		return View::make('hello');
 	}
 
+	public function sayHello($name) {
+		$data = ['variable' => ucfirst($name)];
+		return View::make('temp.my-first-view')->with($data);
+	}
 }
