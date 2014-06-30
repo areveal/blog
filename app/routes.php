@@ -29,6 +29,7 @@ Route::get('contact', 'HomeController@showContact');
 //route for contact addresses
 Route::get('contact-addresses', 'HomeController@showContactAddresses');
 
+Route::resource('posts', 'PostsController');
 
 Route::get('hello', 'HomeController@showWelcome');
 

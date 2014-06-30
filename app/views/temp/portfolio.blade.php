@@ -68,7 +68,6 @@
                 <div class="col-lg-12 text-center">
                     <h2>Portfolio</h2>
                     <hr class="star-primary">
-                    <h3>Under Construction</h3>
                 </div>
             </div>
             <div class="row">
@@ -166,7 +165,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
 
-                 <!--    <form role="form">
+                    <form role="form">
                         <div class="row">
                             <div class="form-group col-xs-12 floating-label-form-group">
                                 <label for="name">Name</label>
@@ -191,7 +190,7 @@
                                 <button type="submit" class="btn btn-lg btn-success">Send</button>
                             </div>
                         </div>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </div>

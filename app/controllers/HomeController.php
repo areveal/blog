@@ -48,7 +48,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		// return View::make('hello');
+		return Redirect::action('HomeController@sayHello','Codeup');
 	}
 
 	public function sayHello($name) {
