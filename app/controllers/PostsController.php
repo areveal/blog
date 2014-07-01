@@ -9,7 +9,10 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return "Show a list of all posts";
+
+		$posts = Post::all();
+
+		return View::make('posts.index')->with('posts',$posts);
 	}
 
 
@@ -31,8 +34,14 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		Log::info(Input::all());
-		return Redirect::back()->withInput();
+		$post = new Post();
+
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+		$post->save();
+
+		return Redirect::action('PostsController@index');
 	}
 
 
@@ -44,7 +53,9 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return "Show specific post at id: {$id}.";
+		$post = Post::find($id);
+
+		return View::make('posts.show')->with('post',$post);
 	}
 
 

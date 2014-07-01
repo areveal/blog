@@ -31,6 +31,15 @@ Route::get('contact-addresses', 'HomeController@showContactAddresses');
 
 Route::resource('posts', 'PostsController');
 
+Route::get('/orm-test', function(){
+	$post = Post::find(2);
+
+	$post->delete();
+
+	return "Done";
+
+});
+
 Route::get('hello', 'HomeController@showWelcome');
 
 Route::get('sayhello/{name}', 'HomeController@sayHello');
