@@ -21,5 +21,7 @@
 		@endforeach
 	</table>
 
+	{{ $posts->links() }}
+
 	<h3>{{ link_to_action('PostsController@create', 'Create New Post') }}</h3>
 @stop
