@@ -6,17 +6,17 @@
 
 @section('content')
 
-	<h1>Create Forms Here!!</h1>
+	<h1>Edit Blog Post Here!!</h1>
 	{{ $errors->first('title', '<span class="help-block">:message</span>') }}
 	{{ $errors->first('body', '<span class="help-block">:message</span>') }}
 	
-	{{ Form::open(['action' => 'PostsController@store']) }}
+	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 
 		{{ Form::label('title','Title:') }}
-		{{ Form::text('title', Input::old('title') , ['class' => 'form-control'])  }}
+		{{ Form::text('title', $post->title , ['class' => 'form-control'])  }}
 
 		{{ Form::label('body','Body:') }}
-		{{ Form::textarea('body', Input::old('title') , ['class' => 'form-control','rows' => '3']) }}
+		{{ Form::textarea('body', $post->body , ['class' => 'form-control','rows' => '3']) }}
 	
 		{{ Form::submit('Submit', ['class' => 'btn btn-success']) }}
 
