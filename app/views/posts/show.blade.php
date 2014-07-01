@@ -5,15 +5,19 @@
 @stop
 
 @section('content')
-<h1>SHOW JUST THE  ONE POST!!</h1>
+
+<h2>{{{$post->title}}}</h2>
 
 <table class="table">
 	<tr>
-		<th>Title</th><th>Body</th>
+		<th>Body</th><th>Last Updated</th>
 	</tr>
 	<tr>
-		<td>{{{$post->title}}}</td>
 		<td>{{{$post->body}}}</td>
+		<td>{{{$post->updated_at}}}</td>
 	</tr>
 </table>
+
+<h3>{{ link_to_action('PostsController@index', 'Back To Posts') }}</h3>
+
 @stop
