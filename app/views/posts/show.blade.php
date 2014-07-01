@@ -13,8 +13,8 @@
 		<th>Body</th><th>Last Updated</th>
 	</tr>
 	<tr>
-		<td>{{{$post->body}}}</td>
-		<td>{{{$post->updated_at}}}</td>
+		<td>{{{ $post->body }}}</td>
+		<td>{{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A') }}}</td>
 	</tr>
 </table>
 
