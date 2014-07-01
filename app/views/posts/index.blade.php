@@ -9,11 +9,13 @@
 
 	<table class="table">
 		<tr>
-			<th>Title</th><!-- <th>Body</th> -->
+			<th>Title</th><th></th>
 		</tr>
 		@foreach ($posts as $post) 
 		<tr>
 			<td>{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</td>
+			<td>{{ link_to_action('PostsController@edit', 'Edit', array($post->id),array('class' => 'btn btn-default') )}}</td>
+			
 			<!-- <td>{{{$post->body}}}</td> -->
 		</tr>
 		@endforeach

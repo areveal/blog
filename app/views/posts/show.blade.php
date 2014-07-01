@@ -19,6 +19,5 @@
 </table>
 
 <h3>{{ link_to_action('PostsController@index', 'Back To Posts') }}</h3>
-<h3>{{ link_to_action('PostsController@edit', 'Edit Post', array($post->id)) }}</h3>
 
 @stop
