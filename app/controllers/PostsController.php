@@ -81,6 +81,7 @@ class PostsController extends \BaseController {
 
 		if($validator->fails()) 
 		{
+			Session::flash('errorMessage','We could not create your post. Please see errors below.');
 			return Redirect::back()->withInput()->withErrors($validator);
 		} 
 		else 
@@ -94,6 +95,7 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
+			Session::flash('successMessage','Your post was successful.');
 			return Redirect::action('PostsController@show',$post->id);
 		}
 	}
