@@ -2,6 +2,15 @@
 
 class PostsController extends \BaseController {
 
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
+
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -49,7 +58,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$post = Post::find($id);
+		$post = Post::findOrfail($id);
 
 		return View::make('posts.show')->with('post',$post);
 	}
@@ -90,7 +99,7 @@ class PostsController extends \BaseController {
 			
 			if(isset($id)) 
 			{
-				$post = Post::find($id);
+				$post = Post::findOrfail($id);
 			}
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
@@ -109,7 +118,10 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return "Delete specific post at id: {$id}.";
+		$post = Post::findOrfail($id);
+		$post->delete();
+		Session::flash('successMessage','Your Post was deleted successfully.');
+		return Redirect::action('PostsController@index');
 	}
 
 

@@ -15,9 +15,12 @@
 		<tr>
 			<td>{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</td>
 			<td>{{{ $post->updated_at->format('F jS Y') }}}</td>
-			<td>{{ link_to_action('PostsController@edit', 'Edit', array($post->id),array('class' => 'btn btn-default') )}}</td>
-			
-			<!-- <td>{{{$post->body}}}</td> -->
+			<td>{{ link_to_action('PostsController@edit', 'Edit', array($post->id), array('class' => 'btn btn-default') )}}</td>
+			<td>
+				{{ Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'DELETE']) }}
+					{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+				{{ Form::close() }}
+			</td>
 		</tr>
 		@endforeach
 	</table>
