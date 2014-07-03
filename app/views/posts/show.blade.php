@@ -14,7 +14,7 @@
 		</tr>
 		<tr>
 			<td>{{{ $post->body }}}</td>
-			<td>{{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A') }}}</td>
+			<td>{{{ $post->updated_at->format('l, F jS Y @ h:i:s A') }}}</td>
 		</tr>
 	</table>
 

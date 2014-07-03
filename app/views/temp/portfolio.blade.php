@@ -78,7 +78,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/cabin.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/design.jpg" class="img-responsive" alt="" />
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -88,7 +88,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/cake.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/web.gif" class="img-responsive" alt="" />
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -98,7 +98,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/circus.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/balloon.jpg" class="img-responsive" alt="" />
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -108,7 +108,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/game.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/stair.jpg" class="img-responsive" alt="" />
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -118,7 +118,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/safe.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/color.jpg" class="img-responsive" alt="" />
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -128,7 +128,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="freelancer/img/portfolio/submarine.png" class="img-responsive" alt="" />
+                        <img src="freelancer/img/portfolio/puzzle.jpg" class="img-responsive" alt="" />
                     </a>
                 </div>
             </div>

@@ -142,7 +142,7 @@ body {
 a{
 	text-decoration: none;
 	font-weight: bolder;
-	color:rgb(99, 165, 67);
+	color:#000;
 }
 
 #codeup {
@@ -248,7 +248,8 @@ h4 {
 }
 
 .gray-wrapper {
-      background-color: #f2f2f1;
+      background-image: url('/img/keys.jpg');
+      background-size: cover;
 }
 
 .training {
@@ -286,7 +287,7 @@ h4 {
 .article-content {
       line-height: 36px;
       font-size: 20px;
-      color: #636F70
+      color: #000;
 }
 
 .features {
@@ -316,7 +317,7 @@ h4 {
 .features p {
       font-size: 16px;
       line-height: 26px;
-      color:#696f6f;
+      color:#000;
       margin-bottom: 7px;
 }
 
