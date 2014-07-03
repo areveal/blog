@@ -25,7 +25,16 @@
 		@endforeach
 	</table>
 
-	{{ $posts->links() }}
+	@if(!empty($_GET['search']))
+		{{ $posts->appends(['search' => $_GET['search']])->links() }}
+	@else 
+		{{ $posts->links() }}
+	@endif
+
+	{{ Form::open(['action' => ['PostsController@index'],'method' => 'GET']) }}
+		{{ Form::text('search', null, ['class' => 'form-inline', 'placeholder' => 'Search']) }}
+		{{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
+	{{ Form::close() }}
 
 	<h3>{{ link_to_action('PostsController@create', 'Create New Post') }}</h3>
 @stop
