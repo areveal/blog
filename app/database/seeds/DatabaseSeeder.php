@@ -35,8 +35,9 @@ class PostTableSeeder extends Seeder {
 
     public function run()
     {
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=1; $i <= 10; $i++) { 
 	        $post = new Post();
+	        $post->user_id = 1;
 	        $post->title = "This is title $i.";
 	        $post->body = "This is body $i.";
 	        $post->save();

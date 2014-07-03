@@ -10,11 +10,12 @@
 
 	<table class="table">
 		<tr>
-			<th>Body</th><th>Last Updated</th>
+			<th>Body</th><th>Last Updated</th><th>Post Admin Email</th>
 		</tr>
 		<tr>
 			<td>{{{ $post->body }}}</td>
 			<td>{{{ $post->updated_at->format('l, F jS Y @ h:i:s A') }}}</td>
+			<td>{{{ $post->user->email }}}</td>
 		</tr>
 	</table>
 
