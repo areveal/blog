@@ -1,5 +1,10 @@
 <?php
 
+Event::listen('illuminate.query', function($sql, $bindings, $time){
+  Log::debug($sql);
+  Log::debug(implode($bindings, ', '));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -28,6 +33,12 @@ Route::get('contact', 'HomeController@showContact');
 
 //route for contact addresses
 Route::get('contact-addresses', 'HomeController@showContactAddresses');
+
+Route::get('login','HomeController@showLogIn');
+
+Route::post('login','HomeController@doLogIn');
+
+Route::get('logout','HomeController@logout');
 
 Route::resource('posts', 'PostsController');
 

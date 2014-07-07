@@ -62,7 +62,8 @@
 			                    <div class="intro-text">
 			                        <span class="name">Cole Reveal</span>
 			                        <hr class="star-light">
-			                        <span class="skills">Web Developer - Problem Solver</span>
+			                        <span class="skills">Web Developer - Problem Solver</span><br>
+                              <span class="skills">alexi.reveal@gmail.com</span>
 			                    </div>
 			                </div>
 			            </div>

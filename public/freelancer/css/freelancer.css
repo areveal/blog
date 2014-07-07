@@ -81,7 +81,8 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background-image: url('/img/desk.jpg');
+    background-image: url('/img/desk.jpg') no-repeat center center fixed;
+    position: relative;
 /*    background: #18bc9c;
 */}
 

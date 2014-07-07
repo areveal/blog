@@ -27,6 +27,11 @@ class UserTableSeeder extends Seeder {
         $user->email = 'cole@codeup.com';
         $user->password = Hash::make('letmein');
         $user->save();
+
+        $user = new User();
+        $user->email = 'brandon@codeup.com';
+        $user->password = Hash::make('letmein');
+        $user->save();
     }
 
 }
@@ -37,7 +42,7 @@ class PostTableSeeder extends Seeder {
     {
         for ($i=1; $i <= 10; $i++) { 
 	        $post = new Post();
-	        $post->user_id = 1;
+	        $post->user_id = mt_rand(1,2);
 	        $post->title = "This is title $i.";
 	        $post->body = "This is body $i.";
 	        $post->save();

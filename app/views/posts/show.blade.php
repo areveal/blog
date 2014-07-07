@@ -2,6 +2,7 @@
 
 @section('topscript')
 	<title>Show Index</title>
+
 @stop
 
 @section('content')
@@ -10,7 +11,7 @@
 
 	<table class="table">
 		<tr>
-			<th>Body</th><th>Last Updated</th><th>Post Admin Email</th>
+			<th>Body</th><th>Last Updated</th><th>Admin Email</th>
 		</tr>
 		<tr>
 			<td>{{{ $post->body }}}</td>
@@ -18,10 +19,11 @@
 			<td>{{{ $post->user->email }}}</td>
 		</tr>
 	</table>
-
-	{{ Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'DELETE', 'id' => $post->id])}}
-		{{ Form::button('Delete', ['class' => 'btn btn-danger']) }}
-	{{ Form::close() }}
+	@if(Auth::check())
+		{{ Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'DELETE']) }}
+			{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+		{{ Form::close() }}
+	@endif
 
 	<h3>{{ link_to_action('PostsController@index', 'Back To Posts') }}</h3>
 

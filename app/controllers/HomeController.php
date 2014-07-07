@@ -46,6 +46,31 @@ class HomeController extends BaseController {
 		return View::make('temp.contact-addresses');
 	}	
 
+	public function showLogIn()
+	{
+		return View::make('temp.log-in');
+	}
+
+	public function doLogIn()
+	{
+		if(Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
+		{
+			Session::flash('successMessage','You were logged in successfully.');
+			return Redirect::intended(action('PostsController@index'));
+		}
+		else 
+		{
+			Session::flash('errorMessage','The email or password was not found.');
+			return Redirect::action('HomeController@showLogIn');
+		}
+	}
+
+	public function logout() 
+	{
+		Auth::logout();
+		return Redirect::action('PostsController@index');
+	}
+
 	public function showWelcome()
 	{
 		// return View::make('hello');
