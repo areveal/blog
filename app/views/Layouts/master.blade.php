@@ -12,6 +12,12 @@
 	<!-- bootstrap JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+	<!-- Bootstrap core CSS -->
+    <link href="/business-casual/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="/business-casual/css/business-casual.css" rel="stylesheet">
+
 	<style>
 		.log-in {
 			position: relative;
@@ -33,18 +39,13 @@
 			top:-30px;
 			left:5px;
 		}
+		body {
+			color: #fff;
+		}
 	</style>
     @yield('topscript')
 </head>
 <body>
-	@if (Auth::check())
-		<a href="{{action('HomeController@logout')}}" class="log-in btn btn-warning">Log Out</a><br>
-		<a href="{{action('PostsController@create')}}" class="create btn btn-primary">Create</a>
-		<h4 class="user_email">{{ Auth::user()->email }}</h4>
-	@else
-		<a href="{{action('HomeController@showLogIn')}}" class="log-in btn btn-success">Log In</a>
-	@endif
-
 	@if (Session::has('successMessage'))
 	    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
 	@endif
@@ -52,7 +53,7 @@
 	    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
 	@endif
 	
-	<h3><a href="{{action('HomeController@showHome')}}" class="back">Back To Blog Home</a></h3>
+	<h3><a href="{{action('PostsController@index')}}" class="back btn btn-default">Back To Blog Home</a></h3>
 
     @yield('content')
 </body>

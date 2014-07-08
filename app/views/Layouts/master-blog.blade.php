@@ -83,13 +83,13 @@
 
     @yield('bottomscript')
 
+
+</body>
     <script src="freelancer/js/jquery-1.10.2.js"></script>
     <script src="freelancer/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="freelancer/js/classie.js"></script>
     <script src="freelancer/js/cbpAnimatedHeader.js"></script>
     <script src="freelancer/js/freelancer.js"></script>
-
-</body>
 
 </html>

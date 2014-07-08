@@ -21,9 +21,9 @@ class PostsController extends \BaseController {
 		
 		if(Input::has('search')) {
 			$search = Input::get('search');
-			$posts = Post::with('user')->where('title','LIKE', "%{$search}%")->orderBy('created_at','desc')->paginate(3);
+			$posts = Post::with('user')->where('title','LIKE', "%{$search}%")->orderBy('updated_at','desc')->paginate(2);
 		} else {
-			$posts = Post::with('user')->paginate(3);
+			$posts = Post::with('user')->orderBy('updated_at','desc')->paginate(2);
 		}
 
 		return View::make('posts.index')->with('posts',$posts);
@@ -110,6 +110,10 @@ class PostsController extends \BaseController {
 			$post->body = Input::get('body');
 			$post->user_id = Auth::user()->id;
 			$post->save();
+			if(Input::hasFile('img') && Input::file('img')->isValid()) {
+				$post->upload(Input::file('img'));
+				$post->save();
+			}
 			Session::flash('successMessage','Your post was successful.');
 			return Redirect::action('PostsController@show',$post->id);
 		}

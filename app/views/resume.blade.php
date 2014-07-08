@@ -38,6 +38,9 @@
                         <a href="#experience">Work Experience</a>
                     </li>
                     <li class="">
+                        <a href="{{action('PostsController@index')}}">Blog</a>
+                    </li>
+                    <li class="">
                         <a href="{{action('HomeController@showPortfolio')}}">Portfolio</a>
                     </li>
                     <li class="">

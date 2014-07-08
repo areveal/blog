@@ -23,32 +23,32 @@ class HomeController extends BaseController {
 	//show blog resume
 	public function showResume()
 	{
-		return View::make('temp.resume');
+		return View::make('resume');
 	}
 	//show portfolio
 	public function showPortfolio()
 	{
-		return View::make('temp.portfolio');
+		return View::make('portfolio');
 	}	
 	//show whack-a-mole project
 	public function showWhack()
 	{
-		return View::make('temp.whack');
+		return View::make('whack');
 	}
 	//show contact book
 	public function showContact()
 	{
-		return View::make('temp.contact');
+		return View::make('contacts.contact');
 	}
 	//show adddress book
 	public function showContactAddresses()
 	{
-		return View::make('temp.contact-addresses');
+		return View::make('contacts.contact-addresses');
 	}	
 
 	public function showLogIn()
 	{
-		return View::make('temp.log-in');
+		return View::make('log-in');
 	}
 
 	public function doLogIn()
@@ -69,16 +69,5 @@ class HomeController extends BaseController {
 	{
 		Auth::logout();
 		return Redirect::action('PostsController@index');
-	}
-
-	public function showWelcome()
-	{
-		// return View::make('hello');
-		return Redirect::action('HomeController@sayHello','Codeup');
-	}
-
-	public function sayHello($name) {
-		$data = ['variable' => ucfirst($name)];
-		return View::make('temp.my-first-view')->with($data);
 	}
 }

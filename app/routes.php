@@ -42,27 +42,3 @@ Route::get('logout','HomeController@logout');
 
 Route::resource('posts', 'PostsController');
 
-Route::get('/orm-test', function(){
-	$post = Post::find(2);
-
-	$post->delete();
-
-	return "Done";
-
-});
-
-Route::get('hello', 'HomeController@showWelcome');
-
-Route::get('sayhello/{name}', 'HomeController@sayHello');
-
-Route::get('rolldice', function(){
-	$roll = mt_rand(1,6);
-	return View::make('temp.rolldice')->with('roll',$roll);
-});
-
-Route::get('rolldice/{guess}', function($guess){
-	$roll = mt_rand(1,6);
-	$data = ['roll'=>$roll,
-			 'guess'=>$guess];
-	return View::make('temp.rolldice')->with($data);
-});

@@ -7,6 +7,7 @@
 		  padding-top: 0px;
 		  padding-bottom: 40px;
 		  background-color: #eee;
+		  color: #fff;
 		}
 
 		.form-signin {

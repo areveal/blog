@@ -35,6 +35,9 @@
                         <a href="#contact">Contact</a>
                     </li> -->
                     <li class="">
+                        <a href="{{action('PostsController@index')}}">Blog</a>
+                    </li>
+                    <li class="">
                         <a href="{{action('HomeController@showResume')}}">Resume</a>
                     </li>
                     <li class="">
@@ -64,7 +67,7 @@
     </header>
 
     <section id="portfolio">
-        <div class="container">
+        <div class="container portfolio">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Portfolio</h2>
@@ -136,7 +139,7 @@
         </div>
     </section>
 
-    <section class="success" id="about">
+    <section class="success about" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
