@@ -44,7 +44,7 @@
 
     @if (Auth::check())
         <a href="{{action('HomeController@logout')}}" class="log-in btn btn-danger">Log Out</a><br>
-        <h4 class="user_email">{{ Auth::user()->email }}</h4>
+        <h4 class="user_email">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</h4>
     @else
         <a href="{{action('HomeController@showLogIn')}}" class="log-in btn btn-success">Log In</a>
     @endif
@@ -124,3 +124,4 @@
 </body>
 
 </html>
+

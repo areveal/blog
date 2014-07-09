@@ -27,14 +27,14 @@
 	        <div class="box">
 	            <div class="col-lg-12">
 	                <hr>
-	                <h2 class="intro-text text-center">{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</strong>
-	                </h2>
+	                <h1 class="intro-text text-center"><strong>{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</strong>
+	                </h1>
 	                @if($post->img_path)
 	                <hr>
-						<img src="{{{$post->img_path}}}" class="img-responsive img-border img-left">
+						<img src="{{{$post->img_path}}}" class="img-responsive img-border">
 					@endif
 	                <hr class="visible-xs">
-	                <p>{{{$post->body}}}</p>
+	                <center>{{$post->renderBody()}}</center>
 	            </div>
 	        </div>
 	    </div>
