@@ -126,8 +126,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="/business-casual/js/jquery-1.10.2.js"></script>
+    <script src="/business-casual/js/bootstrap.js"></script>
     <script>
     // Activates the Carousel
     $('.carousel').carousel({

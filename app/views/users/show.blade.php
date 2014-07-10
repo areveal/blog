@@ -40,17 +40,4 @@
             </div>
         </div>
     </div>
-
-    {{ Form::open(array('action' => 'UsersController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
-    {{ Form::close() }}
-
-    <script type="text/javascript">
-	    $(".deleteUser").click(function() {
-	        var postId = $(this).data('postid');
-	        $("#deleteForm").attr('action', '/posts/' + userId);
-	        if(confirm("Are you sure you want to delete post")) {
-	            $('#deleteForm').submit();
-	        }
-	    });
-	</script>
 @stop
