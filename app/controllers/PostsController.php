@@ -113,25 +113,24 @@ class PostsController extends \BaseController {
 			if(isset($id)) 
 			{
 				$post = Post::findOrfail($id);
-			}
-			if(Auth::user()->id == $post->user->id || Auth::user()->role == 'admin') 
-			{
-				$post->title = Input::get('title');
-				$post->body = Input::get('body');
-				$post->user_id = Auth::user()->id;
-				$post->save();
-				if(Input::hasFile('img') && Input::file('img')->isValid()) {
-					$post->upload(Input::file('img'));
-					$post->save();
+				if(Auth::user()->id != $post->user->id || Auth::user()->role != 'admin') 
+				{
+						Session::flash('errorMessage','You do not have the necessary credentials to edit this post.');
+						return Redirect::back();
 				}
-				Session::flash('successMessage','Your post was successful.');
-				return Redirect::action('PostsController@show',$post->id);	
 			}
-			else 
-			{
-				Session::flash('errorMessage','You do not have the necessary priveleges to edit this post.');
-				return Redirect::action('PostsController@index');
+			
+
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->user_id = Auth::user()->id;
+			$post->save();
+			if(Input::hasFile('img') && Input::file('img')->isValid()) {
+				$post->upload(Input::file('img'));
+				$post->save();
 			}
+			Session::flash('successMessage','Your post was successful.');
+			return Redirect::action('PostsController@show',$post->id);	
 		}
 	}
 
@@ -149,6 +148,8 @@ class PostsController extends \BaseController {
 		Session::flash('successMessage','Your Post was deleted successfully.');
 		return Redirect::action('PostsController@index');
 	}
+
+
 
 
 }

@@ -43,3 +43,4 @@ Route::get('logout','HomeController@logout');
 Route::resource('users', 'UsersController');
 
 Route::resource('posts', 'PostsController');
+
