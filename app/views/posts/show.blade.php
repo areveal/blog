@@ -29,19 +29,30 @@
                 <hr>
     			<center>{{{$post->updated_at->format('F jS Y @ h:i:s A')}}}</center>
     			<hr>
-				<center>Authored by {{{ $post->user->first_name . ' ' . $post->user->last_name}}}</center>	
+    			<center>{{ link_to_action('UsersController@show', $post->user->first_name . ' ' . $post->user->last_name , array($post->user->id)) }}</center>
 				@if(Auth::check())
 					@if(Auth::user()->role == 'admin' || Auth::user()->email == $post->user->email)
 						<hr>
 						<center>
 							{{ link_to_action('PostsController@edit', 'Edit', array($post->id), array('class' => 'btn btn-default') )}}		
-							{{ Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'DELETE']) }}
-								{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-							{{ Form::close() }}	
+							<a href="#" class="deletePost btn btn-danger btn-sm" data-postid="{{ $post->id }}">Delete</a>	
 						</center>
 					@endif
 				@endif
             </div>
         </div>
     </div>
+
+   {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
+   {{ Form::close() }}
+
+   <script type="text/javascript">
+	   $(".deletePost").click(function() {
+	       var postId = $(this).data('postid');
+	       $("#deleteForm").attr('action', '/posts/' + postId);
+	       if(confirm("Are you sure you want to delete post")) {
+	           $('#deleteForm').submit();
+	       }
+	   });
+	</script>
 @stop

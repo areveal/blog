@@ -1,83 +1,151 @@
-@extends('layouts.master-blog')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('topscript')
-	<title>Cole Reveal</title>
-	<style>
-		@import url(//fonts.googleapis.com/css?family=Lato:700);
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		body {
-			margin:20;
-			font-family:'Lato', sans-serif;
-			text-align:center;
-			color: #999;
-		}
+    <title>Cole Reveal</title>
 
-		.welcome {
-			width: 500px;
-			height: 200px;
-			position: relative;
-			left: 50%;
-			top: 50%;
-			margin-left: -250px;
-			margin-top: 200px;
-			margin-bottom: 50px;
-		}
+    <!-- Bootstrap core CSS -->
+    <link href="/landing-page/css/bootstrap.css" rel="stylesheet">
 
-		a, a:visited {
-			text-decoration:none;
-		}
+    <!-- Custom Google Web Font -->
+    <link href="/landing-page/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
-		h1 {
-			font-size: 32px;
-			margin: 16px 0 0 0;
-		}
-        .btn {
-            font-size: 30px;
-        }
-	</style>
+    <!-- Add custom CSS here -->
+    <link href="/landing-page/css/landing-page.css" rel="stylesheet">
 
-@stop
-@section('content')
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+</head>
+
+<body>
+
+    <div class="intro-header">
+
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand">Cole Reveal</a>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Cole Reveal</h1>
+                        <h3>Web-developer</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li><a href="{{action('HomeController@showResume')}}" class="btn btn-default btn-lg"><span class="network-name">Resume</span></a>
+                            </li>
+                            <li><a href="{{action('HomeController@showPortfolio')}}" class="btn btn-default btn-lg"><span class="network-name">Portfolio</span></a>
+                            </li>
+                            <li><a href="{{action('PostsController@index')}}" class="btn btn-default btn-lg"><span class="network-name">Blog</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="">
-                        <a href="{{action('HomeController@showResume')}}">Resume</a>
-                    </li>
-                    <li class="">
-                        <a href="{{action('HomeController@showPortfolio')}}">Portfolio</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+        <!-- /.container -->
 
+    </div>
+    <!-- /.intro-header -->
 
-	<div class="welcome">
-		<h1>You have arrived.</h1>
-        <a href="{{action('HomeController@showResume')}}" class="btn btn-default">Resume</a>
-        <a href="{{action('HomeController@showPortfolio')}}" class="btn btn-default">Portfolio</a>
-        <a href="{{action('PostsController@index')}}" class="btn btn-default">Blog</a>
-	</div>
+    <div class="content-section-a">
 
-@stop
+        <div class="container">
 
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Resume</h2>
+                    <p class="lead">A quick peek at my job, skills, and education. Please <a href="{{action('HomeController@showResume')}}">click here</a> to take a look at my credentials.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="/landing-page/img/ipad.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Portfolio</h2>
+                    <p class="lead">Take a look at my personal and professional projects I have worked on or read a little about me <a href="{{action('HomeController@showPortfolio')}}">here</a>.</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="/landing-page/img/doge.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">The Blog</h2>
+                    <p class="lead">Not just a blog I write... This is a blog site I created with the help of a few contributing authors. From start to finish this blog was designed by me. Come read some interesting insights <a href="{{action('PostsController@index')}}">here</a>.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="/landing-page/img/phones.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect with me:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li><a href="https://twitter.com/AlexiColeReveal" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li><a href="https://github.com/areveal" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/pub/alexi-cole-reveal/64/78/187" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/landing-page/js/jquery-1.10.2.js"></script>
+    <script src="/landing-page/js/bootstrap.js"></script>
+
+</body>
+
+</html>

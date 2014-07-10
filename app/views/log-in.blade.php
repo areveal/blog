@@ -18,6 +18,7 @@
 		.form-signin .form-signin-heading,
 		.form-signin .checkbox {
 		  margin-bottom: 10px;
+		  color:#fff;
 		}
 		.form-signin .checkbox {
 		  font-weight: normal;

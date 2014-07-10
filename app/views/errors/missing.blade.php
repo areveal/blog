@@ -16,6 +16,6 @@
 <div>
 <h1>The page requested was not found</h1>
 <p>It may have been panda-jacked....</p>
-<img src="img/panda.jpg">
+<img src="/img/panda.jpg">
 </div>
 @stop

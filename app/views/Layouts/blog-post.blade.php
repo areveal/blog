@@ -33,9 +33,19 @@
         }
         .user_email {
             position: relative;
-            top:50px;
-            left: 5px;
+            top:70px;
+            left: 10px;
             color: #fff;
+        }
+        .edit_user {
+            position: absolute;
+            top: 40px;
+            left: 90px;
+        }
+        .create_user {
+            position: absolute;
+            top: 40px;
+            left: 180px;
         }
     </style>
 </head>
@@ -43,14 +53,18 @@
 <body>
 
     @if (Auth::check())
-        <a href="{{action('HomeController@logout')}}" class="log-in btn btn-danger">Log Out</a><br>
+        <a href="{{action('HomeController@logout')}}" class="log-in btn btn-danger">Log Out</a>
+        {{ link_to_action('UsersController@edit', 'Edit User', array(Auth::user()->id), array('class' => 'edit_user btn btn-default') )}}
+        @if(Auth::user()->role == 'admin')
+            {{ link_to_action('UsersController@create', 'Create New User', null, array('class' => 'btn btn-default create_user') ) }}
+        @endif
         <h4 class="user_email">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</h4>
     @else
         <a href="{{action('HomeController@showLogIn')}}" class="log-in btn btn-success">Log In</a>
     @endif
 
-    <div class="brand">The Blog</div>
-    <div class="address-bar">Right Here | 1234 This Address | San Antonio, Texas 78240</div>
+    <div class="brand">Cair Laravel</div>
+    <div class="address-bar">5623 Hamilton Wolfe Rd. | San Antonio, Texas 78240</div>
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">

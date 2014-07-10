@@ -37,6 +37,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
+
 		return View::make('posts.create-edit');
 	}
 
@@ -79,7 +80,14 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 
-		return View::make('posts.create-edit')->with('post',$post);
+		if(Auth::user()->id == $post->user->id || Auth::user()->role == 'admin') {
+			return View::make('posts.create-edit')->with('post',$post);
+		}
+		else {
+			Session::flash('errorMessage','You do not have the necessary priveleges to edit this post.');
+			return Redirect::action('PostsController@index');
+		}
+
 	}
 
 
@@ -100,22 +108,30 @@ class PostsController extends \BaseController {
 		} 
 		else 
 		{
-			$post = new Post();
-			
-			if(isset($id)) 
+			if(Auth::user()->id == $post->user->id || Auth::user()->role == 'admin') 
 			{
-				$post = Post::findOrfail($id);
-			}
-			$post->title = Input::get('title');
-			$post->body = Input::get('body');
-			$post->user_id = Auth::user()->id;
-			$post->save();
-			if(Input::hasFile('img') && Input::file('img')->isValid()) {
-				$post->upload(Input::file('img'));
+				$post = new Post();
+				
+				if(isset($id)) 
+				{
+					$post = Post::findOrfail($id);
+				}
+				$post->title = Input::get('title');
+				$post->body = Input::get('body');
+				$post->user_id = Auth::user()->id;
 				$post->save();
+				if(Input::hasFile('img') && Input::file('img')->isValid()) {
+					$post->upload(Input::file('img'));
+					$post->save();
+				}
+				Session::flash('successMessage','Your post was successful.');
+				return Redirect::action('PostsController@show',$post->id);	
 			}
-			Session::flash('successMessage','Your post was successful.');
-			return Redirect::action('PostsController@show',$post->id);
+			else 
+			{
+				Session::flash('errorMessage','You do not have the necessary priveleges to edit this post.');
+				return Redirect::action('PostsController@index');
+			}
 		}
 	}
 

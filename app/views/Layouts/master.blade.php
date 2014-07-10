@@ -42,6 +42,12 @@
 		body {
 			color: #fff;
 		}
+		div {
+			color: #000;
+		}
+		input {
+			color: #000;
+		}
 	</style>
     @yield('topscript')
 </head>

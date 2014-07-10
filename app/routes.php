@@ -17,7 +17,7 @@ Event::listen('illuminate.query', function($sql, $bindings, $time){
 */
 
 //route for home page
-Route::get('', 'HomeController@showHome');
+Route::get('/', 'HomeController@showHome');
 
 //route for resume
 Route::get('resume', 'HomeController@showResume');
@@ -40,5 +40,6 @@ Route::post('login','HomeController@doLogIn');
 
 Route::get('logout','HomeController@logout');
 
-Route::resource('posts', 'PostsController');
+Route::resource('users', 'UsersController');
 
+Route::resource('posts', 'PostsController');

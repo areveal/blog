@@ -48,6 +48,16 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('admin', function()
+{
+	if (Auth::guest() || Auth::user()->role != 'admin')
+	{
+			Session::flash('errorMessage','You do not have the necessary credentials to perform this action.');
+			return Redirect::action('PostsController@index');
+	}
+});
+
+
 
 Route::filter('auth.basic', function()
 {

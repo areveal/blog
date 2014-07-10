@@ -50,7 +50,7 @@
                             </li>
                             <li><a href="https://twitter.com/AlexiColeReveal" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/profile/view?id=227094007" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/pub/alexi-cole-reveal/64/78/187" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                              <li><a href="https://github.com/areveal" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
