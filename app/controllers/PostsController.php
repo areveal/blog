@@ -108,14 +108,14 @@ class PostsController extends \BaseController {
 		} 
 		else 
 		{
+			$post = new Post();
+			
+			if(isset($id)) 
+			{
+				$post = Post::findOrfail($id);
+			}
 			if(Auth::user()->id == $post->user->id || Auth::user()->role == 'admin') 
 			{
-				$post = new Post();
-				
-				if(isset($id)) 
-				{
-					$post = Post::findOrfail($id);
-				}
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
 				$post->user_id = Auth::user()->id;

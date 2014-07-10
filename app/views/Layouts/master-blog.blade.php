@@ -28,6 +28,13 @@
 
 <body id="page-top" class="index" data-twttr-rendered="true">
 
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+
 
 
     @yield('content')
@@ -91,5 +98,11 @@
     <script src="freelancer/js/classie.js"></script>
     <script src="freelancer/js/cbpAnimatedHeader.js"></script>
     <script src="freelancer/js/freelancer.js"></script>
+
+    <script>
+        setTimeout(function(){
+            $('.alert').fadeOut()
+        },2000);
+    </script>
 
 </html>

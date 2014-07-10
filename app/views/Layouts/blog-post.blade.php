@@ -52,6 +52,13 @@
 
 <body>
 
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+
     @if (Auth::check())
         <a href="{{action('HomeController@logout')}}" class="log-in btn btn-danger">Log Out</a>
         {{ link_to_action('UsersController@edit', 'Edit User', array(Auth::user()->id), array('class' => 'edit_user btn btn-default') )}}
@@ -136,6 +143,12 @@
     </script>
 
 </body>
+
+<script>
+    setTimeout(function(){
+        $('.alert').fadeOut()
+    },2000);
+</script>
 
 </html>
 
