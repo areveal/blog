@@ -71,28 +71,5 @@ class HomeController extends BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	// create add commenting feature
-	public function addComment($id) 
-	{
-
-		$validator = Validator::make(Input::all(), Comment::$rules);
-
-		if($validator->fails()) 
-		{
-			Session::flash('errorMessage','We could not post your comment. Please see errors below.');
-			return Redirect::back()->withInput()->withErrors($validator);
-		} 
-		else 
-		{
-			$comment = new Comment();
-			$comment->name = Input::get('name');
-			$comment->body = Input::get('body');
-			$comment->post_id = $id;
-			$comment->save();	
-			Session::flash('successMessage','Your comment was posted.');	
-			return Redirect::action('PostsController@show',$id);
-		}
-	}
-
 
 }

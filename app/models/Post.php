@@ -16,7 +16,7 @@ class Post extends BaseModel {
     	return $this->belongsTo('User');
     }
 
-        public function renderBody()
+    public function renderBody()
     {
         $Parsedown = new Parsedown();
         $text = $Parsedown->text($this->body);
@@ -24,6 +24,18 @@ class Post extends BaseModel {
         $purifier = new HTMLPurifier($config);
         $clean_html = $purifier->purify($text);
         return $clean_html;        
+    }
+
+    static public function findBySlug($slug) 
+    {
+        $post = self::where('slug', $slug)->first();
+        return ($post == null) ? App::abort(404) : $post;
+    }
+
+    public function setSlugAttribute($value) 
+    {
+        $value = str_replace(' ','-',trim($value));
+        $this->attributes['slug'] = strtolower($value);
     }
 
 }

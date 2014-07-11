@@ -46,6 +46,22 @@ class UserTableSeeder extends Seeder {
         $user->password = Hash::make('letmein');
         $user->role = 'user';
         $user->save();
+
+        $user = new User();
+        $user->first_name = 'Zoargad';
+        $user->last_name = 'Sanchez';
+        $user->email = 'zoargad@codeup.com';
+        $user->password = Hash::make('letmein');
+        $user->role = 'user';
+        $user->save();
+
+        $user = new User();
+        $user->first_name = 'Robert';
+        $user->last_name = 'Reveal';
+        $user->email = 'robert@codeup.com';
+        $user->password = Hash::make('letmein');
+        $user->role = 'user';
+        $user->save();
     }
 
 }
@@ -54,12 +70,13 @@ class PostTableSeeder extends Seeder {
 
     public function run()
     {
-        for ($i=1; $i <= 15; $i++) { 
+        for ($i=1; $i <= 30; $i++) { 
 	        $post = new Post();
-	        $post->user_id = mt_rand(1,3);
+	        $post->user_id = mt_rand(1,5);
 	        $post->title = "This is title $i.";
 	        $post->body = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
-	        $post->save();
+	        $post->slug = $post->title;
+            $post->save();
         }
     }
 
