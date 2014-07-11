@@ -20,27 +20,27 @@ Event::listen('illuminate.query', function($sql, $bindings, $time){
 Route::get('/', 'HomeController@showHome');
 
 //route for resume
-Route::get('resume', 'HomeController@showResume');
+Route::get('/resume', 'HomeController@showResume');
 
 //route for portfolio
-Route::get('portfolio', 'HomeController@showPortfolio');
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
 //route for whack-a-mole
-Route::get('whack', 'HomeController@showWhack');
+Route::get('/whack', 'HomeController@showWhack');
 
 //route for contacts
-Route::get('contact', 'HomeController@showContact');
+Route::get('/contact', 'HomeController@showContact');
 
 //route for contact addresses
-Route::get('contact-addresses', 'HomeController@showContactAddresses');
+Route::get('/contact-addresses', 'HomeController@showContactAddresses');
 
-Route::get('login','HomeController@showLogIn');
+Route::get('/login','HomeController@showLogIn');
 
-Route::post('login','HomeController@doLogIn');
+Route::post('/login','HomeController@doLogIn');
 
-Route::get('logout','HomeController@logout');
+Route::get('/logout','HomeController@logout');
 
-Route::resource('users', 'UsersController');
+Route::resource('/users', 'UsersController');
 
-Route::resource('posts', 'PostsController');
+Route::resource('/posts', 'PostsController');
 
