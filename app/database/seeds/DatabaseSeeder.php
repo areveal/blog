@@ -27,39 +27,47 @@ class UserTableSeeder extends Seeder {
         $user->first_name = 'Cole';
         $user->last_name = 'Reveal';
         $user->email = 'cole@codeup.com';
-        $user->password = Hash::make('letmein');
+        $user->password = Hash::make($_ENV['ADMIN_PASS']);
         $user->role = 'admin';
+        $user->save();
+        $user->img_path = '/img-upload/' . $user->id . '-face.jpg';
         $user->save();
 
         $user = new User();
         $user->first_name = 'Brandon';
         $user->last_name = 'Chiuminetta';
         $user->email = 'brandon@codeup.com';
-        $user->password = Hash::make('letmein');
+        $user->password = Hash::make($_ENV['USER_PASS']);
         $user->role = 'user';
+        $user->save();
+        $user->img_path = '/img-upload/' . $user->id . '-brandon.jpg';
         $user->save();
 
         $user = new User();
         $user->first_name = 'Dominick';
         $user->last_name = 'Zucconni';
         $user->email = 'dom@codeup.com';
-        $user->password = Hash::make('letmein');
+        $user->password = Hash::make($_ENV['USER_PASS']);
         $user->role = 'user';
         $user->save();
+        $user->img_path = '/img-upload/' . $user->id . '-dom.jpg';
+        $user->save();        
 
         $user = new User();
         $user->first_name = 'Zoargad';
         $user->last_name = 'Sanchez';
         $user->email = 'zoargad@codeup.com';
-        $user->password = Hash::make('letmein');
+        $user->password = Hash::make($_ENV['USER_PASS']);
         $user->role = 'user';
         $user->save();
+        $user->img_path = '/img-upload/' . $user->id . '-zoargad.jpg';
+        $user->save();        
 
         $user = new User();
         $user->first_name = 'Robert';
         $user->last_name = 'Reveal';
         $user->email = 'robert@codeup.com';
-        $user->password = Hash::make('letmein');
+        $user->password = Hash::make($_ENV['USER_PASS']);
         $user->role = 'user';
         $user->save();
     }
