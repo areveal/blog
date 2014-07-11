@@ -158,7 +158,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <!-- <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -169,7 +169,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
 
-                    {{ Form:open(['action' => 'HomeController@email']) }}
+                    <form role="form">
                         <div class="row">
                             <div class="form-group col-xs-12 floating-label-form-group">
                                 <label for="name">Name</label>
@@ -194,11 +194,11 @@
                                 <button type="submit" class="btn btn-lg btn-success">Send</button>
                             </div>
                         </div>
-                    {{ Form:close() }}
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 @stop
 
