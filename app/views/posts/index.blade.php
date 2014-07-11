@@ -27,7 +27,7 @@
 	        <div class="box">
 	            <div class="col-lg-12">
 	                <hr>
-	                <h1 class="intro-text text-center"><strong>{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</strong>
+	                <h1 class="intro-text text-center"><strong>{{ link_to_action('PostsController@show', $post->title, array($post->slug)) }}</strong>
 	                </h1>
 	                @if($post->img_path)
 	                <hr>

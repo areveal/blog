@@ -1,7 +1,7 @@
 @extends('layouts.blog-post')
 
 @section('topscript')
-	<title>Blog Post</title>
+	<title>{{{ $post->slug }}}</title>
 	<style>
 		.body {
 			text-align: center;

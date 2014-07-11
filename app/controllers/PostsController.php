@@ -62,9 +62,9 @@ class PostsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		$post = Post::findOrfail($id);
+		$post = Post::findbySlug($slug);
 
 		return View::make('posts.show')->with('post',$post);
 	}
@@ -124,6 +124,7 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->user_id = Auth::user()->id;
+			$post->slug = Input::get('title');
 			$post->save();
 			if(Input::hasFile('img') && Input::file('img')->isValid()) {
 				$post->upload(Input::file('img'));
