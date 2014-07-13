@@ -36,12 +36,12 @@
         .edit_user {
             position: relative;
             top: 0px;
-            left: 45px;
+            left: 0px;
         }
         .create_user {
             position: relative;
             top: 0px;
-            left: 90px;
+            left: 0px;
         }
     </style>
 </head>
