@@ -50,7 +50,7 @@
 						<img src="{{{$post->img_path}}}" class="img-responsive img-border">
 					@endif
 	                <hr class="visible-xs">
-	                <center>{{$post->renderBody()}}</center>
+	                <center>{{$post->user->first_name . ' ' . $post->user->last_name }}</center>
 	            </div>
 	        </div>
 	    </div>

@@ -131,7 +131,7 @@ class PostsController extends \BaseController {
 				$post->save();
 			}
 			Session::flash('successMessage','Your post was successful.');
-			return Redirect::action('PostsController@show',$post->id);	
+			return Redirect::action('PostsController@show',$post->slug);	
 		}
 	}
 
