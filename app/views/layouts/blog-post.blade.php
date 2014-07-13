@@ -26,26 +26,22 @@
     <link href="/business-casual/css/business-casual.css" rel="stylesheet">
     @yield('topscript')
     <style>
-        .log-in {
-            position: absolute;
-            top: 40px;
-            left: 5px;
-        }
+
         .user_email {
             position: relative;
-            top:70px;
-            left: 10px;
+            top:0px;
+            left: 0px;
             color: #fff;
         }
         .edit_user {
-            position: absolute;
-            top: 40px;
-            left: 90px;
+            position: relative;
+            top: 0px;
+            left: 45px;
         }
         .create_user {
-            position: absolute;
-            top: 40px;
-            left: 180px;
+            position: relative;
+            top: 0px;
+            left: 90px;
         }
     </style>
 </head>
