@@ -30,7 +30,7 @@
 
 	{{ Form::open(['action' => ['PostsController@index'],'method' => 'GET']) }}
 		<div class="input-group search">
-			{{ Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Search Blog Posts']) }}
+			{{ Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Search Blog Posts by Title']) }}
 			<div class="input-group-btn">
 		        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 		    </div>

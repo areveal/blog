@@ -33,15 +33,6 @@
             left: 0px;
             color: #fff;
         }
-        .edit_user {
-            position: relative;
-            top: 0px;
-            left: 0px;
-        }
-        .create_user {
-            position: relative;
-            top: 0px;
-            left: 0px;
         }
     </style>
 </head>
