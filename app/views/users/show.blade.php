@@ -27,7 +27,7 @@
 				<hr>
 				<h3><center>Blog Posts Created</center></h3>
 				@foreach($user->posts as $post)
-					<center>{{ link_to_action('PostsController@show', $post->title, array($post->id)) }}</center><br>
+					<center>{{ link_to_action('PostsController@show', $post->title, array($post->slug)) }}</center><br>
 				@endforeach
     			@if(Auth::check())
 					@if(Auth::user()->role == 'admin' || Auth::user()->email == $user->email)
